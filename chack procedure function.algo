@@ -1,0 +1,64 @@
+PROCEDURE doc_product(V,U : ARRAY_OF INTEGER )
+    
+VAR
+   i:INTEGER;
+   ps:INTEGER;
+   m:INTEGER
+   ps:=0;
+
+BEGIN
+   FOR i FROM 0 TO m-1 STEP 1 DO
+       ps := ps + V[i]*U[i];
+   END_FOR
+END
+
+ALGORITHM Orthogonal proc
+VAR
+    V : ARRAY_OF INTEGER[20];
+    U : ARRAY_OF INTEGER[20];
+    ps :INTEGER;
+BEGIN
+    write("give first vector");
+    read(V);
+    write("give second vector");
+    read(U);
+    doc_product(V,U,ps);
+    IF (ps=0) THEN
+        write("V and U are orthogonal");
+    ELSE
+        write("V and U are not orthogonal")
+    END_IF     
+    
+END
+
+/////////////////////////////////////////////////////////
+FUNCTION doc_product( V,U : ARRAY_OF INTEGER  VAR ps : INTEGER) : INTEGER
+VAR
+   i:INTEGER;
+   m:INTEGER;
+   ps:=0;
+BEGIN
+    FOR i FROM 0 TO m STEP 1 DO
+       ps := ps + V[i]*U[i];
+     END_FOR
+    RETURN ps ;
+END
+
+ALGORITHM Orthogonal funct
+VAR
+    V : ARRAY_OF INTEGER[20];
+    U : ARRAY_OF INTEGER[20];
+    ps :FLOAT;
+BEGIN
+    write("give first vector");
+    read(V);
+    write("give second vector");
+    read(U);
+    ps = doc_product(V,U,ps);
+    IF (ps=0) THEN
+        write("V and U are orthogonal");
+    ELSE
+        write("V and U are not orthogonal")
+    END_IF     
+    
+END
