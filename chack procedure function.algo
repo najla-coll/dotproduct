@@ -4,11 +4,11 @@ VAR
    i:INTEGER;
    ps:INTEGER;
    m:INTEGER
-   ps:=0;
+   ps =0;
 
 BEGIN
    FOR i FROM 0 TO m-1 STEP 1 DO
-       ps := ps + V[i]*U[i];
+       ps = ps + V[i]*U[i];
    END_FOR
 END
 
@@ -39,7 +39,7 @@ VAR
    ps:=0;
 BEGIN
     FOR i FROM 0 TO m STEP 1 DO
-       ps := ps + V[i]*U[i];
+       ps = ps + V[i]*U[i];
      END_FOR
     RETURN ps ;
 END
